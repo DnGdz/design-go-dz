@@ -2,94 +2,64 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>شكرًا | Design&Go DZ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>شكراً | Design&Go DZ</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bg-home.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #f7f7f7;
       color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      text-align: center;
-      direction: rtl;
+      margin: 0;
     }
 
     .thank-you-container {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 40px 30px;
+      background: white;
+      padding: 40px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      max-width: 600px;
+      text-align: center;
       width: 100%;
+      max-width: 600px;
     }
 
-    .thank-you-container h1 {
-      color: #ff6600;
+    .thank-you-container h2 {
       font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px #fff;
+      color: #ff6600;
     }
 
     .thank-you-container p {
       font-size: 1.2em;
-      color: #333;
-      margin-bottom: 30px;
+      margin-top: 20px;
     }
 
-    .thank-you-container a {
+    .back-home {
       display: inline-block;
-      background: #ff6600;
+      margin-top: 30px;
+      background-color: #ff6600;
       color: white;
-      padding: 12px 30px;
+      padding: 12px 25px;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 1.2em;
-      transition: background 0.3s, transform 0.3s;
+      font-size: 18px;
+      transition: background 0.3s;
     }
 
-    .thank-you-container a:hover {
-      background: #e55d00;
-      transform: scale(1.05);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      color: #fff;
-      background: #333;
-      padding: 10px 0;
-    }
-
-    @media (max-width: 768px) {
-      .thank-you-container h1 {
-        font-size: 2em;
-      }
-      .thank-you-container p {
-        font-size: 1.1em;
-      }
+    .back-home:hover {
+      background-color: #e55d00;
     }
   </style>
 </head>
 <body>
 
 <div class="thank-you-container">
-  <h1>شكرًا لك!</h1>
-  <p>تم إرسال رسالتك بنجاح. سنقوم بالرد عليك قريبًا.</p>
-  <a href="index.html">الرجوع إلى الصفحة الرئيسية</a>
+  <h2>شكراً على تواصلك معنا!</h2>
+  <p>لقد تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.</p>
+  <a href="index.html" class="back-home">العودة إلى الصفحة الرئيسية</a>
 </div>
-
-<footer>
-  <p>تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
-</footer>
 
 </body>
 </html>
