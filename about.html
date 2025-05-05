@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | Design&Go DZ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('bg-home.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #ffffff;
+      text-align: center;
+      padding: 50px 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 3.5em;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      animation: slideDown 1.5s ease-out;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      flex-wrap: wrap;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      background: #ff6600;
+      transform: scale(1.1);
+    }
+
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #ff6600;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .language-selector:hover {
+      background-color: #ff4500;
+    }
+
+    section {
+      padding: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #ff6600;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      line-height: 1.6;
+      font-size: 1.2em;
+      text-align: justify;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1em;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    /* تأثير التحريك */
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="site-title">★ Design&Go DZ ★</h1>
+</header>
+
+<nav>
+  <a href="index.html" id="home-link">الرئيسية</a>
+  <a href="about.html" id="about-link">من نحن</a>
+  <a href="services.html" id="services-link">الخدمات</a>
+  <a href="portfolio.html" id="portfolio-link">Portfolio</a>
+  <a href="contact.html" id="contact-link">تواصل معنا</a>
+</nav>
+
+<!-- زر اختيار اللغة -->
+<div class="language-selector" onclick="toggleLanguage()">
+  <span id="language-text">عربي</span>
+</div>
+
+<section>
+  <h2 class="section-title" id="about-title">من نحن</h2>
+  <div class="content">
+    <p id="about-desc">Design&Go DZ هي شركة تصميم وإبداع رائدة في مجال الحلول الرقمية والتصميم الإبداعي. تأسست شركتنا بهدف تلبية احتياجات السوق المحلي والدولي في توفير حلول تصميم مبتكرة وفريدة من نوعها. نركز في تصميم كل ما يتعلق بالهوية الرقمية لعملائنا، بدءًا من المواقع الإلكترونية وصولًا إلى التصميمات الجرافيكية المتخصصة التي تساهم في تعزيز وجودهم على الإنترنت.</p>
+
+    <h3 id="vision-title">رؤيتنا</h3>
+    <p id="vision-desc">نسعى في Design&Go DZ لأن نكون الرائدين في تقديم حلول تصميم مبتكرة تلبي جميع احتياجات عملائنا، من خلال تطوير هوية قوية وجذابة تتناسب مع تطلعاتهم. نحن نؤمن بقوة أن التصميم الجيد ليس فقط جمالًا، بل أداة فعالة للنجاح والنمو المستدام.</p>
+
+    <h3 id="mission-title">مهمتنا</h3>
+    <p id="mission-desc">مهمتنا هي تمكين الشركات من التميز في عالمها الرقمي من خلال تصميمات مبتكرة، ودعم استراتيجيات العلامات التجارية عبر خدمات احترافية متنوعة. نحن نسعى دائمًا لتقديم حلول تصميم دقيقة تلبي احتياجات عملائنا بدقة وكفاءة، مما يساهم في تعزيز استراتيجياتهم التسويقية وتحقيق أهدافهم.</p>
+
+    <h3 id="values-title">قيمنا</h3>
+    <ul id="values-list">
+      <li>الإبداع: نقدم تصاميم متميزة تعكس الأصالة والتجديد.</li>
+      <li>الاحترافية: نحرص على تقديم أعمالنا وفق أعلى المعايير المهنية وبجودة لا مثيل لها.</li>
+      <li>الابتكار: نبحث دائمًا عن حلول جديدة ومبتكرة تواكب التطور التكنولوجي.</li>
+      <li>العميل في المقام الأول: نؤمن أن نجاحنا يتحقق من خلال رضا عملائنا وتلبية احتياجاتهم بأعلى درجة من الاحترافية.</li>
+    </ul>
+
+    <h3 id="experience-title">خبراتنا</h3>
+    <p id="experience-desc">يتمتع فريق Design&Go DZ بخبرة واسعة في مجالات التصميم المختلفة، حيث لدينا متخصصون في:</p>
+    <ul id="expertise-list">
+      <li>تصميم الشعارات: تقديم شعارات مبتكرة تعكس هوية الشركات.</li>
+      <li>تصميم المواقع الإلكترونية: تطوير مواقع تفاعلية ومتوافقة مع جميع الأجهزة.</li>
+      <li>تصميم الجرافيك: إعداد تصميمات متطورة لوسائل التواصل الاجتماعي، بوستات دعائية، ومطبوعات.</li>
+      <li>كتابة وتصميم السيرة الذاتية: تصميم سير ذاتية احترافية لفرص العمل.</li>
+      <li>تصميم العروض التقديمية: إعداد عروض تقديمية مميزة واحترافية باستخدام PowerPoint.</li>
+    </ul>
+
+    <h3 id="team-title">فريق العمل</h3>
+    <p id="team-desc">يتمتع فريقنا بمهارات متنوعة في جميع مجالات التصميم الرقمي، وهو يضم مجموعة من الخبراء الذين يتمتعون بقدرة على تقديم حلول إبداعية تلبي متطلبات كل عميل على حدة. نحن نعمل معًا لتقديم أفضل الحلول التي تضمن النجاح والنمو لعملائنا.</p>
+  </div>
+</section>
+
+<footer>
+  <p id="footer-text">تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+</footer>
+
+<script>
+  var currentLanguage = 'ar';
+
+  // النصوص بالعربية
+  var translations = {
+    'ar': {
+      'site-title': '★ Design&Go DZ ★',
+      'home-link': 'الرئيسية',
+      'about-link': 'من نحن',
+      'services-link': 'الخدمات',
+      'portfolio-link': 'Portfolio',
+      'contact-link': 'تواصل معنا',
+      'about-title': 'من نحن',
+      'about-desc': 'Design&Go DZ هي شركة تصميم وإبداع رائدة في مجال الحلول الرقمية والتصميم الإبداعي. تأسست شركتنا بهدف تلبية احتياجات السوق المحلي والدولي في توفير حلول تصميم مبتكرة وفريدة من نوعها. نركز في تصميم كل ما يتعلق بالهوية الرقمية لعملائنا، بدءًا من المواقع الإلكترونية وصولًا إلى التصميمات الجرافيكية المتخصصة التي تساهم في تعزيز وجودهم على الإنترنت.',
+      'vision-title': 'رؤيتنا',
+      'vision-desc': 'نسعى في Design&Go DZ لأن نكون الرائدين في تقديم حلول تصميم مبتكرة تلبي جميع احتياجات عملائنا، من خلال تطوير هوية قوية وجذابة تتناسب مع تطلعاتهم. نحن نؤمن بقوة أن التصميم الجيد ليس فقط جمالًا، بل أداة فعالة للنجاح والنمو المستدام.',
+      'mission-title': 'مهمتنا',
+      'mission-desc': 'مهمتنا هي تمكين الشركات من التميز في عالمها الرقمي من خلال تصميمات مبتكرة، ودعم استراتيجيات العلامات التجارية عبر خدمات احترافية متنوعة. نحن نسعى دائمًا لتقديم حلول تصميم دقيقة تلبي احتياجات عملائنا بدقة وكفاءة، مما يساهم في تعزيز استراتيجياتهم التسويقية وتحقيق أهدافهم.',
+      'values-title': 'قيمنا',
+      'values-list': [
+        'الإبداع: نقدم تصاميم متميزة تعكس الأصالة والتجديد.',
+        'الاحترافية: نحرص على تقديم أعمالنا وفق أعلى المعايير المهنية وبجودة لا مثيل لها.',
+        'الابتكار: نبحث دائمًا عن حلول جديدة ومبتكرة تواكب التطور التكنولوجي.',
+        'العميل في المقام الأول: نؤمن أن نجاحنا يتحقق من خلال رضا عملائنا وتلبية احتياجاتهم بأعلى درجة من الاحترافية.'
+      ],
+      'experience-title': 'خبراتنا',
+      'experience-desc': 'يتمتع فريق Design&Go DZ بخبرة واسعة في مجالات التصميم المختلفة، حيث لدينا متخصصون في:',
+      'expertise-list': [
+        'تصميم الشعارات: تقديم شعارات مبتكرة تعكس هوية الشركات.',
+        'تصميم المواقع الإلكترونية: تطوير مواقع تفاعلية ومتوافقة مع جميع الأجهزة.',
+        'تصميم الجرافيك: إعداد تصميمات متطورة لوسائل التواصل الاجتماعي، بوستات دعائية، ومطبوعات.',
+        'كتابة وتصميم السيرة الذاتية: تصميم سير ذاتية احترافية لفرص العمل.',
+        'تصميم العروض التقديمية: إعداد عروض تقديمية مميزة واحترافية باستخدام PowerPoint.'
+      ],
+      'team-title': 'فريق العمل',
+      'team-desc': 'يتمتع فريقنا بمهارات متنوعة في جميع مجالات التصميم الرقمي، وهو يضم مجموعة من الخبراء الذين يتمتعون بقدرة على تقديم حلول إبداعية تلبي متطلبات كل عميل على حدة. نحن نعمل معًا لتقديم أفضل الحلول التي تضمن النجاح والنمو لعملائنا.',
+      'footer-text': 'تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com'
+    },
+    'en': {
+      'site-title': '★ Design&Go DZ ★',
+      'home-link': 'Home',
+      'about-link': 'About Us',
+      'services-link': 'Services',
+      'portfolio-link': 'Portfolio',
+      'contact-link': 'Contact Us',
+      'about-title': 'About Us',
+      'about-desc': 'Design&Go DZ is a leading design and creativity company in the field of digital solutions and creative design. Our company was founded with the goal of meeting local and international market needs by providing innovative and unique design solutions. We focus on designing everything related to the digital identity of our clients, from websites to specialized graphic designs that enhance their presence on the internet.',
+      'vision-title': 'Our Vision',
+      'vision-desc': 'At Design&Go DZ, we strive to be the leaders in providing innovative design solutions that meet all the needs of our clients by developing a strong and attractive identity that aligns with their aspirations. We firmly believe that good design is not only about beauty but is an effective tool for success and sustainable growth.',
+      'mission-title': 'Our Mission',
+      'mission-desc': 'Our mission is to empower businesses to stand out in their digital world through innovative designs and support brand strategies through a variety of professional services. We always strive to provide precise design solutions that meet our clients’ needs with accuracy and efficiency, which contributes to enhancing their marketing strategies and achieving their goals.',
+      'values-title': 'Our Values',
+      'values-list': [
+        'Creativity: We offer outstanding designs that reflect originality and renewal.',
+        'Professionalism: We ensure our work is done according to the highest professional standards with unmatched quality.',
+        'Innovation: We constantly look for new and innovative solutions that keep up with technological progress.',
+        'Client First: We believe our success comes from the satisfaction of our clients and meeting their needs with the highest level of professionalism.'
+      ],
+      'experience-title': 'Our Expertise',
+      'experience-desc': 'The Design&Go DZ team has extensive experience in various design fields, with specialists in:',
+      'expertise-list': [
+        'Logo Design: Creating innovative logos that reflect the identity of companies.',
+        'Website Design: Developing interactive and device-compatible websites.',
+        'Graphic Design: Creating advanced designs for social media, promotional posts, and print materials.',
+        'CV Design: Crafting professional resumes for job opportunities.',
+        'Presentation Design: Creating impressive and professional PowerPoint presentations.'
+      ],
+      'team-title': 'Our Team',
+      'team-desc': 'Our team has diverse skills across all areas of digital design, and includes experts who are capable of offering creative solutions tailored to each client’s needs. We work together to deliver the best solutions that ensure the success and growth of our clients.',
+      'footer-text': 'Follow us on Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
+    }
+  };
+
+  // تحديث النصوص بناءً على اللغة الحالية
+  function updateText() {
+    document.getElementById('site-title').textContent = translations[currentLanguage]['site-title'];
+    document.getElementById('home-link').textContent = translations[currentLanguage]['home-link'];
+    document.getElementById('about-link').textContent = translations[currentLanguage]['about-link'];
+    document.getElementById('services-link').textContent = translations[currentLanguage]['services-link'];
+    document.getElementById('portfolio-link').textContent = translations[currentLanguage]['portfolio-link'];
+    document.getElementById('contact-link').textContent = translations[currentLanguage]['contact-link'];
+    document.getElementById('about-title').textContent = translations[currentLanguage]['about-title'];
+    document.getElementById('about-desc').textContent = translations[currentLanguage]['about-desc'];
+    document.getElementById('vision-title').textContent = translations[currentLanguage]['vision-title'];
+    document.getElementById('vision-desc').textContent = translations[currentLanguage]['vision-desc'];
+    document.getElementById('mission-title').textContent = translations[currentLanguage]['mission-title'];
+    document.getElementById('mission-desc').textContent = translations[currentLanguage]['mission-desc'];
+    document.getElementById('values-title').textContent = translations[currentLanguage]['values-title'];
+    let valuesList = document.getElementById('values-list');
+    valuesList.innerHTML = '';
+    translations[currentLanguage]['values-list'].forEach(function(value) {
+      let li = document.createElement('li');
+      li.textContent = value;
+      valuesList.appendChild(li);
+    });
+    document.getElementById('experience-title').textContent = translations[currentLanguage]['experience-title'];
+    document.getElementById('experience-desc').textContent = translations[currentLanguage]['experience-desc'];
+    let expertiseList = document.getElementById('expertise-list');
+    expertiseList.innerHTML = '';
+    translations[currentLanguage]['expertise-list'].forEach(function(expertise) {
+      let li = document.createElement('li');
+      li.textContent = expertise;
+      expertiseList.appendChild(li);
+    });
+    document.getElementById('team-title').textContent = translations[currentLanguage]['team-title'];
+    document.getElementById('team-desc').textContent = translations[currentLanguage]['team-desc'];
+    document.getElementById('footer-text').textContent = translations[currentLanguage]['footer-text'];
+    document.getElementById('language-text').textContent = (currentLanguage === 'ar') ? 'English' : 'عربي';
+  }
+
+  // تغيير اللغة
+  function toggleLanguage() {
+    currentLanguage = (currentLanguage === 'ar') ? 'en' : 'ar';
+    updateText();
+  }
+
+  // تحديث النصوص عند تحميل الصفحة
+  updateText();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Design&Go DZ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* نفس التنسيق السابق */
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="page-title">★ Design&Go DZ ★</h1>
+</header>
+
+<nav>
+  <a href="index.html" id="home-link">الرئيسية</a>
+  <a href="about.html" id="about-link">من نحن</a>
+  <a href="services.html" id="services-link">الخدمات</a>
+  <a href="portfolio.html" id="portfolio-link">Portfolio</a>
+  <a href="contact.html" id="contact-link">تواصل معنا</a>
+</nav>
+
+<!-- عنصر لاختيار اللغة -->
+<select id="language-selector" onchange="changeLanguage()">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+</select>
+
+<section class="portfolio">
+  <div class="project" id="project1" oncontextmenu="editLink(event)">
+    <img src="project1.jpg" alt="مشروع 1">
+    <h3 id="project1-title">مشروع 1</h3>
+    <p id="project1-description">تفاصيل المشروع 1</p>
+    <a href="https://www.canva.com" target="_blank" id="project1-link">اضغط لترى المشروع</a>
+  </div>
+  <div class="project" id="project2" oncontextmenu="editLink(event)">
+    <img src="project2.jpg" alt="مشروع 2">
+    <h3 id="project2-title">مشروع 2</h3>
+    <p id="project2-description">تفاصيل المشروع 2</p>
+    <a href="https://www.canva.com" target="_blank" id="project2-link">اضغط لترى المشروع</a>
+  </div>
+  <div class="project" id="project3" oncontextmenu="editLink(event)">
+    <img src="project3.jpg" alt="مشروع 3">
+    <h3 id="project3-title">مشروع 3</h3>
+    <p id="project3-description">تفاصيل المشروع 3</p>
+    <a href="https://www.canva.com" target="_blank" id="project3-link">اضغط لترى المشروع</a>
+  </div>
+</section>
+
+<!-- زر إضافة المشروع متاح فقط مع كلمة السر -->
+<div>
+  <button class="add-project" onclick="addProject()" id="add-project-btn">إضافة مشروع جديد</button>
+</div>
+
+<footer>
+  <p id="footer-text">تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+</footer>
+
+<script>
+  // الكائن الذي يحتوي على النصوص المختلفة
+  const translations = {
+    ar: {
+      "page-title": "★ Design&Go DZ ★",
+      "home-link": "الرئيسية",
+      "about-link": "من نحن",
+      "services-link": "الخدمات",
+      "portfolio-link": "Portfolio",
+      "contact-link": "تواصل معنا",
+      "project1-title": "مشروع 1",
+      "project1-description": "تفاصيل المشروع 1",
+      "project1-link": "اضغط لترى المشروع",
+      "project2-title": "مشروع 2",
+      "project2-description": "تفاصيل المشروع 2",
+      "project2-link": "اضغط لترى المشروع",
+      "project3-title": "مشروع 3",
+      "project3-description": "تفاصيل المشروع 3",
+      "project3-link": "اضغط لترى المشروع",
+      "add-project-btn": "إضافة مشروع جديد",
+      "footer-text": "تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
+    },
+    en: {
+      "page-title": "★ Design&Go DZ ★",
+      "home-link": "Home",
+      "about-link": "About Us",
+      "services-link": "Services",
+      "portfolio-link": "Portfolio",
+      "contact-link": "Contact Us",
+      "project1-title": "Project 1",
+      "project1-description": "Details of Project 1",
+      "project1-link": "Click to see the project",
+      "project2-title": "Project 2",
+      "project2-description": "Details of Project 2",
+      "project2-link": "Click to see the project",
+      "project3-title": "Project 3",
+      "project3-description": "Details of Project 3",
+      "project3-link": "Click to see the project",
+      "add-project-btn": "Add New Project",
+      "footer-text": "Follow us on Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
+    },
+    fr: {
+      "page-title": "★ Design&Go DZ ★",
+      "home-link": "Accueil",
+      "about-link": "À propos de nous",
+      "services-link": "Services",
+      "portfolio-link": "Portfolio",
+      "contact-link": "Contactez-nous",
+      "project1-title": "Projet 1",
+      "project1-description": "Détails du projet 1",
+      "project1-link": "Cliquez pour voir le projet",
+      "project2-title": "Projet 2",
+      "project2-description": "Détails du projet 2",
+      "project2-link": "Cliquez pour voir le projet",
+      "project3-title": "Projet 3",
+      "project3-description": "Détails du projet 3",
+      "project3-link": "Cliquez pour voir le projet",
+      "add-project-btn": "Ajouter un nouveau projet",
+      "footer-text": "Suivez-nous sur Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
+    }
+  };
+
+  // تغيير اللغة
+  function changeLanguage() {
+    const selectedLanguage = document.getElementById("language-selector").value;
+    const langData = translations[selectedLanguage];
+    
+    // تحديث النصوص بناءً على اللغة المختارة
+    for (let id in langData) {
+      document.getElementById(id).textContent = langData[id];
+    }
+  }
+
+  // فقط إذا كانت كلمة السر صحيحة سيتمكن المالك من إضافة مشروع
+  var correctPassword = "d10012007";
+  
+  function addProject() {
+    var password = prompt("من فضلك أدخل كلمة السر لإضافة مشروع:");
+
+    if (password === correctPassword) {
+      alert("تم التحقق من كلمة السر بنجاح! يمكنك الآن إضافة مشروع جديد.");
+      // يمكنك هنا إضافة الكود الخاص بإضافة المشروع الجديد
+      // مثل فتح نافذة لرفع صورة وكتابة رابط المشروع.
+    } else {
+      alert("كلمة السر غير صحيحة. أنت غير مخول لإضافة مشاريع.");
+    }
+  }
+
+  // عند الضغط المطول على المشروع، يسمح لك بتعديل الرابط
+  function editLink(event) {
+    event.preventDefault();
+    var newLink = prompt("أدخل الرابط الجديد للمشروع:");
+    if (newLink) {
+      var projectElement = event.target.closest('.project');
+      projectElement.querySelector('a').href = newLink;
+      projectElement.querySelector('a').textContent = "اضغط لترى المشروع";
+      alert("تم تعديل الرابط بنجاح.");
+    }
+  }
+</script>
+
+</body>
+</html>
