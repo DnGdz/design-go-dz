@@ -1,12 +1,155 @@
 <!DOCTYPE html>
+
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio | Design&Go DZ</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    /* نفس التنسيق السابق */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9900, #ffcc00); /* البرتقالي والأصفر */
+      color: #222;
+    }
+
+    header {
+      background-color: #333; /* الخلفية داكنة */
+      color: #ff9900; /* شعار باللون البرتقالي */
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #333; /* الخلفية داكنة */
+      padding: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #ff9900; /* البرتقالي */
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: #ffcc00; /* الأصفر عند التمرير */
+    }
+
+    #language-selector {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 10px;
+      background: #fff; /* الخلفية بيضاء */
+    }
+
+    .project {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 300px;
+      text-align: center;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #ff9900; /* البرتقالي */
+    }
+
+    .project p {
+      padding: 0 10px;
+      font-size: 15px;
+    }
+
+    .project a {
+      display: inline-block;
+      margin: 10px 0 15px;
+      color: #ff9900; /* البرتقالي */
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .project a:hover {
+      color: #ffcc00; /* الأصفر عند التمرير */
+    }
+
+    .add-project {
+      display: block;
+      margin: 0 auto 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #222;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-project:hover {
+      background: #ff9900; /* البرتقالي */
+    }
+
+    footer {
+      background-color: #333; /* الخلفية داكنة */
+      color: #fff; /* النص باللون الأبيض */
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+
+    footer a {
+      color: #ff9900;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .portfolio {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -23,45 +166,24 @@
   <a href="contact.html" id="contact-link">تواصل معنا</a>
 </nav>
 
-<!-- عنصر لاختيار اللغة -->
 <select id="language-selector" onchange="changeLanguage()">
   <option value="ar">العربية</option>
   <option value="en">English</option>
   <option value="fr">Français</option>
 </select>
 
-<section class="portfolio">
-  <div class="project" id="project1" oncontextmenu="editLink(event)">
-    <img src="project1.jpg" alt="مشروع 1">
-    <h3 id="project1-title">مشروع 1</h3>
-    <p id="project1-description">تفاصيل المشروع 1</p>
-    <a href="https://www.canva.com" target="_blank" id="project1-link">اضغط لترى المشروع</a>
-  </div>
-  <div class="project" id="project2" oncontextmenu="editLink(event)">
-    <img src="project2.jpg" alt="مشروع 2">
-    <h3 id="project2-title">مشروع 2</h3>
-    <p id="project2-description">تفاصيل المشروع 2</p>
-    <a href="https://www.canva.com" target="_blank" id="project2-link">اضغط لترى المشروع</a>
-  </div>
-  <div class="project" id="project3" oncontextmenu="editLink(event)">
-    <img src="project3.jpg" alt="مشروع 3">
-    <h3 id="project3-title">مشروع 3</h3>
-    <p id="project3-description">تفاصيل المشروع 3</p>
-    <a href="https://www.canva.com" target="_blank" id="project3-link">اضغط لترى المشروع</a>
-  </div>
-</section>
+<section class="portfolio" id="portfolio-container"></section>
 
-<!-- زر إضافة المشروع متاح فقط مع كلمة السر -->
 <div>
   <button class="add-project" onclick="addProject()" id="add-project-btn">إضافة مشروع جديد</button>
 </div>
 
 <footer>
   <p id="footer-text">تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+  <a href="mailto:blk4631@gmail.com">Send us an email</a>
 </footer>
 
 <script>
-  // الكائن الذي يحتوي على النصوص المختلفة
   const translations = {
     ar: {
       "page-title": "★ Design&Go DZ ★",
@@ -70,15 +192,6 @@
       "services-link": "الخدمات",
       "portfolio-link": "Portfolio",
       "contact-link": "تواصل معنا",
-      "project1-title": "مشروع 1",
-      "project1-description": "تفاصيل المشروع 1",
-      "project1-link": "اضغط لترى المشروع",
-      "project2-title": "مشروع 2",
-      "project2-description": "تفاصيل المشروع 2",
-      "project2-link": "اضغط لترى المشروع",
-      "project3-title": "مشروع 3",
-      "project3-description": "تفاصيل المشروع 3",
-      "project3-link": "اضغط لترى المشروع",
       "add-project-btn": "إضافة مشروع جديد",
       "footer-text": "تابعنا على إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
     },
@@ -89,76 +202,83 @@
       "services-link": "Services",
       "portfolio-link": "Portfolio",
       "contact-link": "Contact Us",
-      "project1-title": "Project 1",
-      "project1-description": "Details of Project 1",
-      "project1-link": "Click to see the project",
-      "project2-title": "Project 2",
-      "project2-description": "Details of Project 2",
-      "project2-link": "Click to see the project",
-      "project3-title": "Project 3",
-      "project3-description": "Details of Project 3",
-      "project3-link": "Click to see the project",
       "add-project-btn": "Add New Project",
       "footer-text": "Follow us on Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
     },
     fr: {
       "page-title": "★ Design&Go DZ ★",
       "home-link": "Accueil",
-      "about-link": "À propos de nous",
+      "about-link": "À propos",
       "services-link": "Services",
       "portfolio-link": "Portfolio",
       "contact-link": "Contactez-nous",
-      "project1-title": "Projet 1",
-      "project1-description": "Détails du projet 1",
-      "project1-link": "Cliquez pour voir le projet",
-      "project2-title": "Projet 2",
-      "project2-description": "Détails du projet 2",
-      "project2-link": "Cliquez pour voir le projet",
-      "project3-title": "Projet 3",
-      "project3-description": "Détails du projet 3",
-      "project3-link": "Cliquez pour voir le projet",
-      "add-project-btn": "Ajouter un nouveau projet",
+      "add-project-btn": "Ajouter un projet",
       "footer-text": "Suivez-nous sur Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
     }
   };
 
-  // تغيير اللغة
   function changeLanguage() {
-    const selectedLanguage = document.getElementById("language-selector").value;
-    const langData = translations[selectedLanguage];
-    
-    // تحديث النصوص بناءً على اللغة المختارة
-    for (let id in langData) {
-      document.getElementById(id).textContent = langData[id];
+    const lang = document.getElementById("language-selector").value;
+    const t = translations[lang];
+    for (let key in t) {
+      const el = document.getElementById(key);
+      if (el) el.textContent = t[key];
     }
   }
 
-  // فقط إذا كانت كلمة السر صحيحة سيتمكن المالك من إضافة مشروع
-  var correctPassword = "d10012007";
-  
+  const correctPassword = "d10012007";
+  const container = document.getElementById("portfolio-container");
+
+  function saveProjects(projects) {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }
+
+  function loadProjects() {
+    return JSON.parse(localStorage.getItem("projects")) || [];
+  }
+
+  function renderProjects() {
+    const projects = loadProjects();
+    container.innerHTML = "";
+    projects.forEach((proj, index) => {
+      const div = document.createElement("div");
+      div.className = "project";
+      div.innerHTML = `
+        <img src="${proj.img}" alt="${proj.title}">
+        <h3>${proj.title}</h3>
+        <p>${proj.desc}</p>
+        <a href="${proj.link}" target="_blank">اضغط لترى المشروع</a><br>
+        <button onclick="deleteProject(${index})" style="margin-bottom:10px;color:red;border:none;background:none;cursor:pointer">🗑 حذف</button>
+      `;
+      container.appendChild(div);
+    });
+  }
+
   function addProject() {
-    var password = prompt("من فضلك أدخل كلمة السر لإضافة مشروع:");
+    const pass = prompt("من فضلك أدخل كلمة السر لإضافة مشروع:");
+    if (pass !== correctPassword) return alert("كلمة السر غير صحيحة!");
 
-    if (password === correctPassword) {
-      alert("تم التحقق من كلمة السر بنجاح! يمكنك الآن إضافة مشروع جديد.");
-      // يمكنك هنا إضافة الكود الخاص بإضافة المشروع الجديد
-      // مثل فتح نافذة لرفع صورة وكتابة رابط المشروع.
-    } else {
-      alert("كلمة السر غير صحيحة. أنت غير مخول لإضافة مشاريع.");
-    }
+    const title = prompt("عنوان المشروع:");
+    const desc = prompt("وصف المشروع:");
+    const link = prompt("رابط المشروع:");
+    const img = prompt("رابط صورة المشروع:");
+
+    if (!title || !desc || !link || !img) return alert("يرجى تعبئة جميع الحقول");
+
+    const projects = loadProjects();
+    projects.push({ title, desc, link, img });
+    saveProjects(projects);
+    renderProjects();
   }
 
-  // عند الضغط المطول على المشروع، يسمح لك بتعديل الرابط
-  function editLink(event) {
-    event.preventDefault();
-    var newLink = prompt("أدخل الرابط الجديد للمشروع:");
-    if (newLink) {
-      var projectElement = event.target.closest('.project');
-      projectElement.querySelector('a').href = newLink;
-      projectElement.querySelector('a').textContent = "اضغط لترى المشروع";
-      alert("تم تعديل الرابط بنجاح.");
-    }
+  function deleteProject(index) {
+    const projects = loadProjects();
+    projects.splice(index, 1);
+    saveProjects(projects);
+    renderProjects();
   }
+
+  renderProjects();
 </script>
 
 </body>
