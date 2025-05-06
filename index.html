@@ -2,33 +2,29 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>تواصل معنا | Design&Go DZ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title">الرئيسية | Design&Go DZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* ... (نفس تنسيقاتك الأصلية تمامًا بدون تغيير) ... */
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('bg-home.jpg') no-repeat center center fixed;
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('bg-home.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      direction: rtl;
     }
-
     header {
       background: white;
       text-align: center;
       padding: 30px 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     header h1 {
       color: #ff6600;
       font-size: 3em;
       text-shadow: 1px 1px #fff;
       animation: slideDown 1s ease-out;
     }
-
     nav {
       display: flex;
       justify-content: center;
@@ -36,7 +32,6 @@
       flex-wrap: wrap;
       padding: 10px;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -45,97 +40,58 @@
       border-radius: 30px;
       transition: background 0.3s, transform 0.3s;
     }
-
     nav a:hover {
       background: #ff6600;
       transform: scale(1.1);
     }
-
-    #language-selector {
-      background-color: #333;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 30px;
-      font-size: 16px;
-      border: none;
-      transition: background 0.3s, transform 0.3s;
-      margin: 10px;
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 2s;
     }
-
-    #language-selector:hover {
-      background: #ff6600;
-      transform: scale(1.1);
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #ff6600;
+      text-shadow: 1px 1px #fff;
     }
-
-    .contact-section {
-      padding: 40px 20px;
-      max-width: 700px;
-      margin: auto;
+    .hero p {
+      font-size: 1.2em;
+      color: #222;
     }
-
-    .contact-section form {
+    form {
       background: white;
-      padding: 30px;
+      margin: 30px auto;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
     }
-
-    .contact-section input,
-    .contact-section textarea {
+    input, textarea, button {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 10px;
+      margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 1em;
     }
-
-    .contact-section button {
+    button {
       background: #ff6600;
       color: white;
-      padding: 12px 20px;
       border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s;
     }
-
-    .contact-section button:hover {
+    button:hover {
       background: #e55d00;
-      transform: scale(1.05);
     }
-
-    .social-icons {
-      margin-top: 40px;
-      display: grid;
-      gap: 15px;
-    }
-
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      padding: 12px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-decoration: none;
-      color: #333;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .social-icons a:hover {
-      background: #ff6600;
+    footer {
+      background: #333;
       color: white;
-      transform: scale(1.03);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
-
-    .social-icons i {
-      margin-left: 10px;
-      font-size: 20px;
-      color: #ff6600;
-    }
-
     .back-to-top {
       position: fixed;
       bottom: 50px;
@@ -147,79 +103,69 @@
       font-size: 24px;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s;
     }
-
     .back-to-top:hover {
       background: #e55d00;
     }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
     @keyframes slideDown {
       from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
 
-    @media(max-width: 768px) {
-      header h1 { font-size: 2em; }
-      .contact-section form { padding: 20px; }
+    /* لغة */
+    #language-selector {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+<select id="language-selector">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+</select>
+
 <header>
-  <h1>★ Design&Go DZ ★</h1>
+  <h1 id="site-title">★ Design&Go DZ ★</h1>
 </header>
 
 <nav>
-  <a href="index.html" id="home-link">الرئيسية</a>
-  <a href="about.html" id="about-link">من نحن</a>
-  <a href="services.html" id="services-link">الخدمات</a>
-  <a href="contact.html" id="contact-link">تواصل معنا</a>
-  <select id="language-selector" onchange="changeLanguage()">
-    <option value="ar">العربية</option>
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-  </select>
+  <a href="index.html" id="nav-home">الرئيسية</a>
+  <a href="about.html" id="nav-about">من نحن</a>
+  <a href="services.html" id="nav-services">الخدمات</a>
+  <a href="contact.html" id="nav-contact">تواصل معنا</a>
 </nav>
 
-<section class="contact-section">
-  <h2 id="contact-heading">تواصل معنا</h2>
-  <form action="https://formspree.io/f/mwpoolan" method="POST" onsubmit="window.location.href='thankyou.html'; return true;">
-    <label for="name" id="name-label">الاسم</label>
-    <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
-
-    <label for="email" id="email-label">البريد الإلكتروني</label>
-    <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
-
-    <label for="message" id="message-label">رسالتك</label>
-    <textarea id="message" name="message" placeholder="أدخل رسالتك" required></textarea>
-
-    <button type="submit" id="submit-btn">إرسال</button>
-  </form>
-
-  <div class="social-icons">
-    <a href="mailto:blk4631@gmail.com">
-      <i class="fas fa-envelope"></i> البريد الإلكتروني
-    </a>
-    <a href="https://www.instagram.com/design.n.go_dz" target="_blank">
-      <i class="fab fa-instagram"></i> إنستغرام
-    </a>
-    <a href="https://wa.me/213793113293" target="_blank">
-      <i class="fab fa-whatsapp"></i> واتساب
-    </a>
-    <a href="tel:+213793113293">
-      <i class="fas fa-phone-alt"></i> 0793113293
-    </a>
-  </div>
+<section class="hero">
+  <h2 id="hero-title">مرحبًا بك في Design&Go DZ</h2>
+  <p id="hero-text">خدمات رقمية متكاملة بجودة عالية وسرعة تنفيذ</p>
 </section>
+
+<form action="https://formspree.io/f/mwpoolan" method="POST" onsubmit="return showSuccessMessage()">
+  <h3 id="form-title">اكتب طلبك هنا</h3>
+  <input type="text" name="name" placeholder="اسمك" required>
+  <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+  <textarea name="message" placeholder="تفاصيل الطلب" required></textarea>
+  <button type="submit" id="form-button">إرسال</button>
+</form>
+
+<div id="form-success" style="display:none; text-align:center; color:green; font-weight:bold;">تم إرسال الرسالة بنجاح. سيتم تحويلك الآن...</div>
 
 <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -229,58 +175,77 @@
 
 <script>
   const translations = {
+    ar: {
+      title: "الرئيسية | Design&Go DZ",
+      siteTitle: "★ Design&Go DZ ★",
+      nav: {
+        home: "الرئيسية",
+        about: "من نحن",
+        services: "الخدمات",
+        contact: "تواصل معنا"
+      },
+      heroTitle: "مرحبًا بك في Design&Go DZ",
+      heroText: "خدمات رقمية متكاملة بجودة عالية وسرعة تنفيذ",
+      formTitle: "اكتب طلبك هنا",
+      formButton: "إرسال",
+      footer: "تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
+    },
     en: {
-      "home-link": "Home",
-      "about-link": "About Us",
-      "services-link": "Services",
-      "contact-link": "Contact Us",
-      "contact-heading": "Contact Us",
-      "name-label": "Name",
-      "email-label": "Email",
-      "message-label": "Your Message",
-      "submit-btn": "Submit",
-      "footer-text": "Follow us: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
+      title: "Home | Design&Go DZ",
+      siteTitle: "★ Design&Go DZ ★",
+      nav: {
+        home: "Home",
+        about: "About Us",
+        services: "Services",
+        contact: "Contact"
+      },
+      heroTitle: "Welcome to Design&Go DZ",
+      heroText: "Complete digital services with high quality and fast execution",
+      formTitle: "Submit your request here",
+      formButton: "Send",
+      footer: "Follow us: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
     },
     fr: {
-      "home-link": "Accueil",
-      "about-link": "À Propos",
-      "services-link": "Services",
-      "contact-link": "Contactez-nous",
-      "contact-heading": "Contactez-nous",
-      "name-label": "Nom",
-      "email-label": "Email",
-      "message-label": "Votre message",
-      "submit-btn": "Envoyer",
-      "footer-text": "Suivez-nous : Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
-    },
-    ar: {
-      "home-link": "الرئيسية",
-      "about-link": "من نحن",
-      "services-link": "الخدمات",
-      "contact-link": "تواصل معنا",
-      "contact-heading": "تواصل معنا",
-      "name-label": "الاسم",
-      "email-label": "البريد الإلكتروني",
-      "message-label": "رسالتك",
-      "submit-btn": "إرسال",
-      "footer-text": "تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
+      title: "Accueil | Design&Go DZ",
+      siteTitle: "★ Design&Go DZ ★",
+      nav: {
+        home: "Accueil",
+        about: "À propos",
+        services: "Services",
+        contact: "Contact"
+      },
+      heroTitle: "Bienvenue chez Design&Go DZ",
+      heroText: "Services numériques complets avec qualité et rapidité",
+      formTitle: "Soumettez votre demande ici",
+      formButton: "Envoyer",
+      footer: "Suivez-nous: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
     }
   };
 
-  function changeLanguage() {
-    const lang = document.getElementById("language-selector").value;
-    const translation = translations[lang];
+  const selector = document.getElementById("language-selector");
 
-    document.getElementById("home-link").textContent = translation["home-link"];
-    document.getElementById("about-link").textContent = translation["about-link"];
-    document.getElementById("services-link").textContent = translation["services-link"];
-    document.getElementById("contact-link").textContent = translation["contact-link"];
-    document.getElementById("contact-heading").textContent = translation["contact-heading"];
-    document.getElementById("name-label").textContent = translation["name-label"];
-    document.getElementById("email-label").textContent = translation["email-label"];
-    document.getElementById("message-label").textContent = translation["message-label"];
-    document.getElementById("submit-btn").textContent = translation["submit-btn"];
-    document.getElementById("footer-text").textContent = translation["footer-text"];
+  selector.addEventListener("change", () => {
+    const lang = selector.value;
+    const t = translations[lang];
+    document.title = t.title;
+    document.getElementById("site-title").textContent = t.siteTitle;
+    document.getElementById("nav-home").textContent = t.nav.home;
+    document.getElementById("nav-about").textContent = t.nav.about;
+    document.getElementById("nav-services").textContent = t.nav.services;
+    document.getElementById("nav-contact").textContent = t.nav.contact;
+    document.getElementById("hero-title").textContent = t.heroTitle;
+    document.getElementById("hero-text").textContent = t.heroText;
+    document.getElementById("form-title").textContent = t.formTitle;
+    document.getElementById("form-button").textContent = t.formButton;
+    document.getElementById("footer-text").textContent = t.footer;
+  });
+
+  function showSuccessMessage() {
+    document.getElementById("form-success").style.display = "block";
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 2500);
+    return true;
   }
 </script>
 

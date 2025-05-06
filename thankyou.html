@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شكراً لتواصلك معنا | Design&Go DZ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('bg-home.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff6600;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #fff;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      animation: fadeIn 2s;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #ff6600;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    a.button:hover {
+      background: #e55d00;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 شكرًا لتواصلك معنا!</h1>
+  <p>تم إرسال رسالتك بنجاح. سنقوم بالرد عليك في أقرب وقت ممكن.</p>
+  <a class="button" href="index.html">العودة إلى الصفحة الرئيسية</a>
+
+</body>
+</html>
