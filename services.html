@@ -121,6 +121,38 @@
       from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a, #language-selector {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+      .services {
+        padding: 20px 10px;
+      }
+      .service {
+        padding: 15px;
+      }
+      .service i {
+        font-size: 40px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      .service i {
+        font-size: 30px;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -133,7 +165,6 @@
   <a href="index.html" id="nav-home">الرئيسية</a>
   <a href="about.html" id="nav-about">من نحن</a>
   <a href="services.html" id="nav-services">الخدمات</a>
-  <a href="portfolio.html" id="nav-portfolio">Portfolio</a>
   <a href="contact.html" id="nav-contact">تواصل معنا</a>
   <select id="language-selector">
     <option value="ar">العربية</option>
@@ -203,7 +234,6 @@
       'nav-home': 'الرئيسية',
       'nav-about': 'من نحن',
       'nav-services': 'الخدمات',
-      'nav-portfolio': 'Portfolio',
       'nav-contact': 'تواصل معنا',
       'service-title-1': 'تصميم بوستات',
       'service-desc-1': 'تصميم بوستات احترافية لسوشيال ميديا بجودة عالية.',
@@ -221,7 +251,6 @@
       'nav-home': 'Home',
       'nav-about': 'About Us',
       'nav-services': 'Services',
-      'nav-portfolio': 'Portfolio',
       'nav-contact': 'Contact',
       'service-title-1': 'Post Design',
       'service-desc-1': 'Professional social media posts with high quality.',
@@ -239,7 +268,6 @@
       'nav-home': 'Accueil',
       'nav-about': 'À propos',
       'nav-services': 'Services',
-      'nav-portfolio': 'Portfolio',
       'nav-contact': 'Contact',
       'service-title-1': 'Conception de posts',
       'service-desc-1': 'Posts professionnels pour les réseaux sociaux.',
@@ -248,20 +276,18 @@
       'service-title-3': 'Conception de CV',
       'service-desc-3': 'CV professionnels pour les opportunités d\'emploi.',
       'service-title-4': 'Présentations (PowerPoint)',
-      'service-desc-4': 'Présentations PowerPoint professionnelles et attrayantes.',
+      'service-desc-4': 'Présentations professionnelles avec PowerPoint.',
       'service-title-5': 'Création de sites web',
       'service-desc-5': 'Sites web interactifs compatibles avec tous les appareils.',
-      'footer': 'Suivez-nous : Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
+      'footer': 'Suivez-nous: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
     }
   };
 
-  document.getElementById("language-selector").addEventListener("change", function() {
+  document.getElementById('language-selector').addEventListener('change', function() {
     const lang = this.value;
-    const elements = translations[lang];
-    for (const id in elements) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = elements[id];
-    }
+    Object.keys(translations[lang]).forEach(function(key) {
+      document.getElementById(key).textContent = translations[lang][key];
+    });
   });
 </script>
 
