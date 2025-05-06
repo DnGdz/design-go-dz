@@ -242,10 +242,10 @@
 
   function showSuccessMessage() {
     document.getElementById("form-success").style.display = "block";
-    setTimeout(() => {
+    setTimeout(function() {
       window.location.href = "thankyou.html";
-    }, 2500);
-    return true;
+    }, 3000);
+    return false;
   }
 </script>
 

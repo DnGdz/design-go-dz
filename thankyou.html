@@ -2,70 +2,95 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>شكراً لتواصلك معنا | Design&Go DZ</title>
+  <title id="title">شكرًا | Design&Go DZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('bg-home.jpg') no-repeat center center fixed;
-      background-size: cover;
       margin: 0;
-      padding: 0;
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('bg-thankyou.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
     }
-
-    h1 {
-      font-size: 3em;
+    header {
+      background: #ff6600;
+      text-align: center;
+      padding: 30px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      color: white;
+      font-size: 3.5em;
+      text-shadow: 1px 1px #fff;
+    }
+    .message-container {
+      text-align: center;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .message-container h2 {
+      font-size: 2.5em;
       color: #ff6600;
       margin-bottom: 20px;
-      text-shadow: 1px 1px #fff;
-      animation: fadeInDown 1s ease-out;
     }
-
-    p {
+    .message-container p {
       font-size: 1.2em;
+      color: #333;
       margin-bottom: 30px;
-      animation: fadeIn 2s;
     }
-
-    a.button {
-      display: inline-block;
-      padding: 15px 30px;
+    .back-to-home {
       background: #ff6600;
       color: white;
-      text-decoration: none;
+      padding: 12px 25px;
+      font-size: 1.2em;
       border-radius: 30px;
-      font-size: 1.1em;
+      text-decoration: none;
       transition: background 0.3s, transform 0.3s;
     }
-
-    a.button:hover {
+    .back-to-home:hover {
       background: #e55d00;
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      .message-container h2 {
+        font-size: 2em;
+      }
+      .message-container p {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>🎉 شكرًا لتواصلك معنا!</h1>
-  <p>تم إرسال رسالتك بنجاح. سنقوم بالرد عليك في أقرب وقت ممكن.</p>
-  <a class="button" href="index.html">العودة إلى الصفحة الرئيسية</a>
+<header>
+  <h1>شكراً لك على تواصلك مع Design&Go DZ!</h1>
+</header>
+
+<section class="message-container">
+  <h2>تم إرسال طلبك بنجاح!</h2>
+  <p>نحن نقدر وقتك واهتمامك. سنقوم بالرد على طلبك في أقرب وقت ممكن. إذا كان لديك أي استفسار آخر، لا تتردد في الاتصال بنا.</p>
+  <a href="index.html" class="back-to-home">الرجوع إلى الصفحة الرئيسية</a>
+</section>
+
+<footer>
+  <p>تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+</footer>
 
 </body>
 </html>
