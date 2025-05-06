@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الخدمات | Design&Go DZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -11,6 +13,7 @@
       background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('bg-home.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
+      box-sizing: border-box;
     }
 
     header {
@@ -126,18 +129,27 @@
       header h1 {
         font-size: 2em;
       }
+
       nav a, #language-selector {
         padding: 8px 16px;
         font-size: 0.9em;
       }
+
       .services {
         padding: 20px 10px;
       }
+
       .service {
         padding: 15px;
       }
+
       .service i {
         font-size: 40px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 15px;
       }
     }
 
@@ -145,14 +157,17 @@
       header h1 {
         font-size: 1.5em;
       }
+
       .service i {
         font-size: 30px;
       }
+
       .back-to-top {
         bottom: 20px;
         right: 15px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -275,8 +290,6 @@
       'service-desc-2': 'Logos uniques représentant votre identité.',
       'service-title-3': 'Conception de CV',
       'service-desc-3': 'CV professionnels pour les opportunités d\'emploi.',
-      'service-title-4': 'Présentations (PowerPoint)',
-      'service-desc-4': 'Présentations professionnelles avec PowerPoint.',
       'service-title-5': 'Création de sites web',
       'service-desc-5': 'Sites web interactifs compatibles avec tous les appareils.',
       'footer': 'Suivez-nous: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
@@ -286,7 +299,10 @@
   document.getElementById('language-selector').addEventListener('change', function() {
     const lang = this.value;
     Object.keys(translations[lang]).forEach(function(key) {
-      document.getElementById(key).textContent = translations[lang][key];
+      const element = document.getElementById(key);
+      if (element) {
+        element.textContent = translations[lang][key];
+      }
     });
   });
 </script>

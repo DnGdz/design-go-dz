@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title id="title">الرئيسية | Design&Go DZ</title>
+  <meta charset="UTF-8" />
+  <title>الرئيسية | Design&Go DZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
@@ -65,11 +65,11 @@
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       width: 90%;
-      max-width: 400px;
+      max-width: 500px;
     }
     input, textarea, button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 10px;
@@ -83,6 +83,19 @@
     }
     button:hover {
       background: #e55d00;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 500px;
+      font-weight: bold;
+      border: 1px solid #c3e6cb;
     }
     footer {
       background: #333;
@@ -107,6 +120,23 @@
     .back-to-top:hover {
       background: #e55d00;
     }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      nav { flex-direction: column; align-items: center; }
+      nav a { margin: 5px 0; font-size: 1em; }
+      .hero h2 { font-size: 1.8em; }
+      .hero p { font-size: 1em; }
+      form { width: 90%; margin: 10px; }
+      .back-to-top { bottom: 20px; right: 20px; font-size: 20px; padding: 12px; }
+    }
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5em; }
+      .hero h2 { font-size: 1.5em; }
+      .hero p { font-size: 0.9em; }
+      nav a { font-size: 0.9em; padding: 8px 12px; }
+      form { width: 85%; }
+      .back-to-top { bottom: 15px; right: 15px; font-size: 18px; padding: 10px; }
+    }
     @keyframes slideDown {
       from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
@@ -115,179 +145,80 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    #language-selector {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 6px 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-weight: bold;
-    }
-
-    /* تحسين التوافق مع الهواتف */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        display: block;
-        margin: 5px 0;
-        padding: 10px 15px;
-        font-size: 1em;
-      }
-
-      .hero h2 {
-        font-size: 1.8em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      #language-selector {
-        position: static;
-        margin: 10px auto;
-        display: block;
-      }
-
-      .back-to-top {
-        font-size: 18px;
-        padding: 10px;
-      }
-
-      footer {
-        font-size: 13px;
-        padding: 15px;
-      }
-    }
   </style>
 </head>
 <body>
 
-<select id="language-selector">
-  <option value="ar">العربية</option>
-  <option value="en">English</option>
-  <option value="fr">Français</option>
-</select>
+  <header>
+    <h1>Design&Go DZ</h1>
+    <nav>
+      <a href="index.html" id="nav-home">الرئيسية</a>
+      <a href="about.html" id="nav-about">من نحن</a>
+      <a href="services.html" id="nav-services">الخدمات</a>
+      <a href="contact.html" id="nav-contact">تواصل معنا</a>
+    </nav>
+  </header>
 
-<header>
-  <h1 id="site-title">★ Design&Go DZ ★</h1>
-</header>
+  <div class="hero">
+    <h2>مرحبًا بك في Design&Go DZ</h2>
+    <p>نحن هنا لتحويل أفكارك إلى واقع، استكشف خدماتنا المتميزة الآن!</p>
+  </div>
 
-<nav>
-  <a href="index.html" id="nav-home">الرئيسية</a>
-  <a href="about.html" id="nav-about">من نحن</a>
-  <a href="services.html" id="nav-services">الخدمات</a>
-  <a href="contact.html" id="nav-contact">تواصل معنا</a>
-</nav>
+  <!-- رسالة النجاح -->
+  <div id="success-message" class="success-message">
+    ✅ تم إرسال رسالتك بنجاح! سيتم تحويلك إلى صفحة الشكر خلال ثوانٍ...
+  </div>
 
-<section class="hero">
-  <h2 id="hero-title">مرحبًا بك في Design&Go DZ</h2>
-  <p id="hero-text">خدمات رقمية متكاملة بجودة عالية وسرعة تنفيذ</p>
-</section>
+  <!-- نموذج الاتصال -->
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="الاسم الكامل" required>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="text" name="whatsapp" placeholder="رقم الواتساب (اجباري)">
+    <textarea name="message" rows="5" placeholder="اكتب طلبك هنا" required></textarea>
+    <button type="submit">إرسال</button>
+  </form>
 
-<form action="https://formspree.io/f/mwpoolan" method="POST" onsubmit="return showSuccessMessage()">
-  <h3 id="form-title">اكتب طلبك هنا</h3>
-  <input type="text" name="name" placeholder="اسمك" required>
-  <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-  <textarea name="message" placeholder="تفاصيل الطلب" required></textarea>
-  <button type="submit" id="form-button">إرسال</button>
-</form>
+  <footer>
+    <p>&copy; 2025 Design&Go DZ. جميع الحقوق محفوظة.</p>
+  </footer>
 
-<div id="form-success" style="display:none; text-align:center; color:green; font-weight:bold;">تم إرسال الرسالة بنجاح. سيتم تحويلك الآن...</div>
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-<a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
 
-<footer>
-  <p id="footer-text">تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
-</footer>
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
 
-<script>
-  const translations = {
-    ar: {
-      title: "الرئيسية | Design&Go DZ",
-      siteTitle: "★ Design&Go DZ ★",
-      nav: {
-        home: "الرئيسية",
-        about: "من نحن",
-        services: "الخدمات",
-        contact: "تواصل معنا"
-      },
-      heroTitle: "مرحبًا بك في Design&Go DZ",
-      heroText: "خدمات رقمية متكاملة بجودة عالية وسرعة تنفيذ",
-      formTitle: "اكتب طلبك هنا",
-      formButton: "إرسال",
-      footer: "تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
-    },
-    en: {
-      title: "Home | Design&Go DZ",
-      siteTitle: "★ Design&Go DZ ★",
-      nav: {
-        home: "Home",
-        about: "About Us",
-        services: "Services",
-        contact: "Contact"
-      },
-      heroTitle: "Welcome to Design&Go DZ",
-      heroText: "Complete digital services with high quality and fast execution",
-      formTitle: "Submit your request here",
-      formButton: "Send",
-      footer: "Follow us: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
-    },
-    fr: {
-      title: "Accueil | Design&Go DZ",
-      siteTitle: "★ Design&Go DZ ★",
-      nav: {
-        home: "Accueil",
-        about: "À propos",
-        services: "Services",
-        contact: "Contact"
-      },
-      heroTitle: "Bienvenue chez Design&Go DZ",
-      heroText: "Services numériques complets avec qualité et rapidité",
-      formTitle: "Soumettez votre demande ici",
-      formButton: "Envoyer",
-      footer: "Suivez-nous: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formspree.io/f/mwpoolan", {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          showSuccessMessage();
+        } else {
+          alert("حدث خطأ أثناء الإرسال. حاول مجددًا.");
+        }
+      } catch (error) {
+        alert("حدث خطأ في الاتصال.");
+      }
+    });
+
+    function showSuccessMessage() {
+      form.style.display = "none";
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        window.location.href = "thankyou.html";
+      }, 3000);
     }
-  };
-
-  const selector = document.getElementById("language-selector");
-
-  selector.addEventListener("change", () => {
-    const lang = selector.value;
-    const t = translations[lang];
-    document.title = t.title;
-    document.getElementById("site-title").textContent = t.siteTitle;
-    document.getElementById("nav-home").textContent = t.nav.home;
-    document.getElementById("nav-about").textContent = t.nav.about;
-    document.getElementById("nav-services").textContent = t.nav.services;
-    document.getElementById("nav-contact").textContent = t.nav.contact;
-    document.getElementById("hero-title").textContent = t.heroTitle;
-    document.getElementById("hero-text").textContent = t.heroText;
-    document.getElementById("form-title").textContent = t.formTitle;
-    document.getElementById("form-button").textContent = t.formButton;
-    document.getElementById("footer-text").textContent = t.footer;
-  });
-
-  function showSuccessMessage() {
-    document.getElementById("form-success").style.display = "block";
-    setTimeout(function() {
-      window.location.href = "thankyou.html";
-    }, 3000);
-    return false;
-  }
-</script>
-
+  </script>
 </body>
 </html>
