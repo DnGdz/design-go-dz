@@ -54,21 +54,6 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-.language-selector {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #ff6600;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.language-selector:hover {
-  background-color: #ff4500;
-}
-
 section {
   padding: 40px;
   animation: fadeIn 2s ease-in-out;
@@ -175,12 +160,6 @@ footer a:hover {
   <a href="contact.html" id="contact-link">تواصل معنا</a>
 </nav>
 
-<!-- زر اختيار اللغة -->
-
-<div class="language-selector" onclick="toggleLanguage()">
-  <span id="language-text">عربي</span>
-</div>
-
 <section>
   <h2 class="section-title" id="about-title">من نحن</h2>
   <div class="content">
@@ -214,62 +193,6 @@ footer a:hover {
 <p id="team-desc">يتمتع فريقنا بمهارات متنوعة في جميع مجالات التصميم الرقمي، وهو يضم مجموعة من الخبراء الذين يتمتعون بقدرة على تقديم حلول إبداعية تلبي متطلبات كل عميل على حدة. نحن نعمل معًا لتقديم أفضل الحلول التي تضمن النجاح والنمو لعملائنا.</p>
 
 <p class="team-member-name">بالخير جاد</p>
-<p class="team-role">مؤسس ومدير عام، المبدع المتفوق الذي يقود فريق Design&Go DZ بعقلية مبتكرة وطموح لا حدود له. هو خبير في تصميم الحلول الرقمية والتسويق الإبداعي، ويقود الفريق لتحقيق النجاح المشترك مع عملائنا.</p>
+<p class="team-role">مؤسس ومدير عام، المبدع المتفوق الذي يقود فريق Design&Go DZ بعقلية إبداعية ورؤية استراتيجية متقدمة. يتمتع بخبرة تمتد لسنوات عديدة في مجال تصميم الحلول الرقمية وتطوير الهوية الرقمية.</p>
 
-<h3 id="cv-title">سيرتي الذاتية</h3>
-<p id="cv-description">بالخير جاد هو المؤسس والرئيس التنفيذي لشركة Design&Go DZ. منذ بداية مسيرته المهنية، أظهر شغفًا كبيرًا بالتكنولوجيا والتصميم، مما دفعه لابتكار حلول تصميم مبتكرة تمزج بين الإبداع والتقنية الحديثة. طوال سنوات خبرته، عمل على العديد من المشاريع الناجحة في مجالات التصميم الجرافيكي، تطوير المواقع، والتسويق الرقمي.</p>
-
-<ul id="cv-experience">
-  <li>مؤسس شركة Design&Go DZ (منذ 2020): قيادة فريق من المحترفين في تقديم الحلول الرقمية.</li>
-  <li>تصميم وتطوير مواقع إلكترونية للشركات الكبرى.</li>
-  <li>عمل مع العديد من العلامات التجارية الشهيرة في تصميم الشعارات والمحتوى الرقمي.</li>
-  <li>مستشار تصميم للعديد من المشاريع الوطنية والدولية.</li>
-  <li>التدريب وتقديم ورش عمل في مجالات التصميم الرقمي والتسويق.</li>
-</ul>
-
-<h3 id="contact-title">تواصل معنا</h3>
-<p id="contact-desc">نحن هنا للمساعدة! لا تتردد في التواصل معنا للحصول على استشارات تصميم أو لبدء مشروعك التالي. نحن جاهزون لخدمتك في أي وقت.</p>
-
-</div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Design&Go DZ | جميع الحقوق محفوظة</p>
-</footer>
-
-<script>
-  const translations = {
-    "ar": {
-      "about-title": "من نحن",
-      "about-desc": "Design&Go DZ هي شركة تصميم وإبداع رائدة في مجال الحلول الرقمية والتصميم الإبداعي...",
-      "vision-title": "رؤيتنا",
-      "mission-title": "مهمتنا",
-      "values-title": "قيمنا",
-      "experience-title": "خبراتنا",
-      "team-title": "فريق العمل",
-      "cv-title": "سيرتي الذاتية",
-      "contact-title": "تواصل معنا"
-    },
-    "en": {
-      "about-title": "About Us",
-      "about-desc": "Design&Go DZ is a leading design and creativity company in the digital solutions and creative design field...",
-      "vision-title": "Our Vision",
-      "mission-title": "Our Mission",
-      "values-title": "Our Values",
-      "experience-title": "Our Experience",
-      "team-title": "Our Team",
-      "cv-title": "My CV",
-      "contact-title": "Contact Us"
-    }
-  };
-
-  function toggleLanguage() {
-    let language = document.getElementById("language-text").textContent === "عربي" ? "en" : "ar";
-    document.getElementById("language-text").textContent = language === "ar" ? "عربي" : "English";
-    Object.keys(translations[language]).forEach(key => {
-      document.getElementById(key).textContent = translations[language][key];
-    });
-  }
-</script>
-</body>
-</html>
+<h3 id="cv-title">سيرتي الذاتية</h3> <p id="cv-desc">تتمثل خبراتي في تقديم حلول مبتكرة في مجالات تصميم المواقع الإلكترونية، التصميم الجرافيكي، والشعارات، بالإضافة إلى خبرة واسعة في تطوير تطبيقات البرمجيات. طموحي هو تحويل الأفكار الإبداعية إلى واقع، مع التركيز على تحسين تجربة المستخدم عبر جميع المنصات.</p> <h3 id="contact-title">تواصل معنا</h3> <p id="contact-desc">نحن هنا للمساعدة! لا تتردد في التواصل معنا للحصول على استشارات تصميم أو لبدء مشروعك التالي. نحن جاهزون لخدمتك في أي وقت.</p> </section> <footer> <p>© 2025 Design&Go DZ | جميع الحقوق محفوظة</p> <a href="contact.html">تواصل معنا</a> </footer> </body> </html>

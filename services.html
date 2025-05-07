@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
@@ -39,7 +38,7 @@
       gap: 10px;
     }
 
-    nav a, #language-selector {
+    nav a {
       color: white;
       text-decoration: none;
       padding: 10px 20px;
@@ -52,7 +51,7 @@
       font-family: inherit;
     }
 
-    nav a:hover, #language-selector:hover {
+    nav a:hover {
       background: #ff6600;
       transform: scale(1.1);
     }
@@ -130,7 +129,7 @@
         font-size: 2em;
       }
 
-      nav a, #language-selector {
+      nav a {
         padding: 8px 16px;
         font-size: 0.9em;
       }
@@ -167,65 +166,59 @@
         right: 15px;
       }
     }
-
   </style>
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">★ Design&Go DZ ★</h1>
+  <h1>★ Design&Go DZ ★</h1>
 </header>
 
 <nav>
-  <a href="index.html" id="nav-home">الرئيسية</a>
-  <a href="about.html" id="nav-about">من نحن</a>
-  <a href="services.html" id="nav-services">الخدمات</a>
-  <a href="contact.html" id="nav-contact">تواصل معنا</a>
-  <select id="language-selector">
-    <option value="ar">العربية</option>
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-  </select>
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="services.html">الخدمات</a>
+  <a href="contact.html">تواصل معنا</a>
 </nav>
 
 <section class="services">
   <div class="service" onclick="toggleDetails(0)">
     <i class="fas fa-image"></i>
-    <h3 id="service-title-1">تصميم بوستات</h3>
-    <p id="service-desc-1">تصميم بوستات احترافية لسوشيال ميديا بجودة عالية.</p>
-    <div class="service-details" id="service-details-1">
+    <h3>تصميم بوستات</h3>
+    <p>تصميم بوستات احترافية لسوشيال ميديا بجودة عالية.</p>
+    <div class="service-details">
       <p>نقوم بتصميم بوستات مميزة ومناسبة لعلامتك التجارية، مع مراعاة التفاعل مع جمهورك المستهدف على منصات مثل إنستاجرام وفيسبوك.</p>
     </div>
   </div>
   <div class="service" onclick="toggleDetails(1)">
     <i class="fas fa-pen-nib"></i>
-    <h3 id="service-title-2">تصميم شعارات</h3>
-    <p id="service-desc-2">شعارات مميزة تعبر عن هوية العلامة التجارية الخاصة بك.</p>
-    <div class="service-details" id="service-details-2">
+    <h3>تصميم شعارات</h3>
+    <p>شعارات مميزة تعبر عن هوية العلامة التجارية الخاصة بك.</p>
+    <div class="service-details">
       <p>تصميم شعار فريد يعكس رؤيتك وهويتك التجارية، مع تقديم حلول تصميم مميزة تتناسب مع مختلف الصناعات.</p>
     </div>
   </div>
   <div class="service" onclick="toggleDetails(2)">
     <i class="fas fa-file-alt"></i>
-    <h3 id="service-title-3">تصميم سير ذاتية (CV)</h3>
-    <p id="service-desc-3">كتابة وتصميم سير ذاتية احترافية لفرص العمل.</p>
-    <div class="service-details" id="service-details-3">
+    <h3>تصميم سير ذاتية (CV)</h3>
+    <p>كتابة وتصميم سير ذاتية احترافية لفرص العمل.</p>
+    <div class="service-details">
       <p>نساعدك في تصميم سيرة ذاتية جذابة ومنظمة، مما يعزز فرصك في الحصول على وظيفة من خلال عرض مهاراتك وخبراتك بشكل احترافي.</p>
     </div>
   </div>
   <div class="service" onclick="toggleDetails(3)">
     <i class="fas fa-chalkboard"></i>
-    <h3 id="service-title-4">عروض تقديمية (PowerPoint)</h3>
-    <p id="service-desc-4">إنشاء عروض تقديمية مميزة واحترافية باستخدام PowerPoint.</p>
-    <div class="service-details" id="service-details-4">
+    <h3>عروض تقديمية (PowerPoint)</h3>
+    <p>إنشاء عروض تقديمية مميزة واحترافية باستخدام PowerPoint.</p>
+    <div class="service-details">
       <p>نقوم بتصميم عروض تقديمية ذات تأثير بصري قوي واحترافية، مع دمج المحتوى بشكل متناسق وجذاب لزيادة التأثير على جمهورك.</p>
     </div>
   </div>
   <div class="service" onclick="toggleDetails(4)">
     <i class="fas fa-laptop-code"></i>
-    <h3 id="service-title-5">إنشاء مواقع ويب</h3>
-    <p id="service-desc-5">تطوير مواقع إلكترونية تفاعلية ومتوافقة مع جميع الأجهزة.</p>
-    <div class="service-details" id="service-details-5">
+    <h3>إنشاء مواقع ويب</h3>
+    <p>تطوير مواقع إلكترونية تفاعلية ومتوافقة مع جميع الأجهزة.</p>
+    <div class="service-details">
       <p>نقوم بتصميم وتطوير مواقع الإنترنت التي تتميز بالاستجابة العالية وسهولة التصفح على جميع الأجهزة المحمولة والحواسيب.</p>
     </div>
   </div>
@@ -234,7 +227,7 @@
 <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
 <footer>
-  <p id="footer">تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+  <p>تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
 </footer>
 
 <script>
@@ -243,68 +236,6 @@
     var service = details[index];
     service.style.display = service.style.display === "block" ? "none" : "block";
   }
-
-  const translations = {
-    ar: {
-      'nav-home': 'الرئيسية',
-      'nav-about': 'من نحن',
-      'nav-services': 'الخدمات',
-      'nav-contact': 'تواصل معنا',
-      'service-title-1': 'تصميم بوستات',
-      'service-desc-1': 'تصميم بوستات احترافية لسوشيال ميديا بجودة عالية.',
-      'service-title-2': 'تصميم شعارات',
-      'service-desc-2': 'شعارات مميزة تعبر عن هوية العلامة التجارية الخاصة بك.',
-      'service-title-3': 'تصميم سير ذاتية (CV)',
-      'service-desc-3': 'كتابة وتصميم سير ذاتية احترافية لفرص العمل.',
-      'service-title-4': 'عروض تقديمية (PowerPoint)',
-      'service-desc-4': 'إنشاء عروض تقديمية مميزة واحترافية باستخدام PowerPoint.',
-      'service-title-5': 'إنشاء مواقع ويب',
-      'service-desc-5': 'تطوير مواقع إلكترونية تفاعلية ومتوافقة مع جميع الأجهزة.',
-      'footer': 'تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com'
-    },
-    en: {
-      'nav-home': 'Home',
-      'nav-about': 'About Us',
-      'nav-services': 'Services',
-      'nav-contact': 'Contact',
-      'service-title-1': 'Post Design',
-      'service-desc-1': 'Professional social media posts with high quality.',
-      'service-title-2': 'Logo Design',
-      'service-desc-2': 'Unique logos that represent your brand identity.',
-      'service-title-3': 'CV Design',
-      'service-desc-3': 'Professional CVs tailored for job opportunities.',
-      'service-title-4': 'Presentations (PowerPoint)',
-      'service-desc-4': 'Professional and engaging PowerPoint presentations.',
-      'service-title-5': 'Website Creation',
-      'service-desc-5': 'Interactive websites compatible with all devices.',
-      'footer': 'Follow us: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
-    },
-    fr: {
-      'nav-home': 'Accueil',
-      'nav-about': 'À propos',
-      'nav-services': 'Services',
-      'nav-contact': 'Contact',
-      'service-title-1': 'Conception de posts',
-      'service-desc-1': 'Posts professionnels pour les réseaux sociaux.',
-      'service-title-2': 'Création de logos',
-      'service-desc-2': 'Logos uniques représentant votre identité.',
-      'service-title-3': 'Conception de CV',
-      'service-desc-3': 'CV professionnels pour les opportunités d\'emploi.',
-      'service-title-5': 'Création de sites web',
-      'service-desc-5': 'Sites web interactifs compatibles avec tous les appareils.',
-      'footer': 'Suivez-nous: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com'
-    }
-  };
-
-  document.getElementById('language-selector').addEventListener('change', function() {
-    const lang = this.value;
-    Object.keys(translations[lang]).forEach(function(key) {
-      const element = document.getElementById(key);
-      if (element) {
-        element.textContent = translations[lang][key];
-      }
-    });
-  });
 </script>
 
 </body>

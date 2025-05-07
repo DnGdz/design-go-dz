@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -13,18 +17,21 @@
       background-size: cover;
       color: #333;
       direction: rtl;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
       background: white;
       text-align: center;
-      padding: 30px 10px;
+      padding: 3vh 2vw;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     header h1 {
       color: #ff6600;
-      font-size: 3em;
+      font-size: 3vw;
       text-shadow: 1px 1px #fff;
       animation: slideDown 1s ease-out;
     }
@@ -35,18 +42,17 @@
       align-items: center;
       background: #333;
       flex-wrap: wrap;
-      padding: 10px;
-      position: relative;
+      padding: 1vh;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 10px 20px;
+      padding: 1vh 2vw;
       font-weight: bold;
       border-radius: 30px;
       transition: background 0.3s, transform 0.3s;
-      margin: 5px;
+      margin: 0.5vh;
     }
 
     nav a:hover {
@@ -54,60 +60,48 @@
       transform: scale(1.1);
     }
 
-    #language-selector {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background-color: #333;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 30px;
-      font-size: 16px;
-      border: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    #language-selector:hover {
-      background: #ff6600;
-      transform: scale(1.1);
-    }
-
-    @media(max-width: 768px) {
-      header h1 { font-size: 2em; }
-      .contact-section form { padding: 20px; }
-      #language-selector { top: 60px; right: 10px; }
-    }
-
     .contact-section {
-      padding: 40px 20px;
-      max-width: 700px;
+      flex: 1;
+      padding: 5vh 5vw;
+      max-width: 800px;
       margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5vw;
+      text-align: center;
+      margin-bottom: 2vh;
     }
 
     .contact-section form {
       background: white;
-      padding: 30px;
+      padding: 3vh 3vw;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
     }
 
     .contact-section input,
     .contact-section textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 1vh 1vw;
+      margin-bottom: 1.5vh;
       border: 1px solid #ccc;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     .contact-section button {
       background: #ff6600;
       color: white;
-      padding: 12px 20px;
+      padding: 1vh 2vw;
       border: none;
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
@@ -117,17 +111,27 @@
       transform: scale(1.05);
     }
 
+    .success-message {
+      display: none;
+      padding: 2vh;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 2vh;
+    }
+
     .social-icons {
-      margin-top: 40px;
+      margin-top: 4vh;
       display: grid;
-      gap: 15px;
+      gap: 1.5vh;
     }
 
     .social-icons a {
       display: flex;
       align-items: center;
       background: #fff;
-      padding: 12px;
+      padding: 1vh 1vw;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-decoration: none;
@@ -143,19 +147,19 @@
 
     .social-icons i {
       margin-left: 10px;
-      font-size: 20px;
+      font-size: 1.2rem;
       color: #ff6600;
     }
 
     .back-to-top {
       position: fixed;
-      bottom: 50px;
-      right: 20px;
+      bottom: 5vh;
+      right: 2vw;
       background: #ff6600;
       color: white;
-      padding: 15px;
+      padding: 1.5vh;
       border-radius: 50%;
-      font-size: 24px;
+      font-size: 1.5rem;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
@@ -168,8 +172,8 @@
       background: #333;
       color: white;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 2vh;
+      font-size: 0.9rem;
     }
 
     @keyframes slideDown {
@@ -177,16 +181,19 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    .success-message {
-      display: none;
-      padding: 20px;
-      background-color: #28a745;
-      color: white;
-      text-align: center;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 6vw;
+      }
 
+      .contact-section h2 {
+        font-size: 6vw;
+      }
+
+      .contact-section {
+        padding: 5vh 5vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -196,30 +203,25 @@
 </header>
 
 <nav>
-  <a href="index.html" data-i18n="home-link">الرئيسية</a>
-  <a href="about.html" data-i18n="about-link">من نحن</a>
-  <a href="services.html" data-i18n="services-link">الخدمات</a>
-  <a href="contact.html" data-i18n="contact-link">تواصل معنا</a>
-  <select id="language-selector" onchange="changeLanguage()">
-    <option value="ar">العربية</option>
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-  </select>
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="services.html">الخدمات</a>
+  <a href="contact.html">تواصل معنا</a>
 </nav>
 
 <section class="contact-section">
-  <h2 data-i18n="contact-heading">تواصل معنا</h2>
+  <h2>تواصل معنا</h2>
   <form action="https://formspree.io/f/mwpoolan" method="POST" onsubmit="showSuccessMessage(); return false;">
-    <label for="name" data-i18n="name-label">الاسم</label>
+    <label for="name">الاسم</label>
     <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
 
-    <label for="email" data-i18n="email-label">البريد الإلكتروني</label>
+    <label for="email">البريد الإلكتروني</label>
     <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
 
-    <label for="message" data-i18n="message-label">رسالتك</label>
+    <label for="message">رسالتك</label>
     <textarea id="message" name="message" placeholder="أدخل رسالتك" required></textarea>
 
-    <button type="submit" data-i18n="submit-btn">إرسال</button>
+    <button type="submit">إرسال</button>
   </form>
 
   <div class="success-message" id="success-message">
@@ -228,16 +230,16 @@
 
   <div class="social-icons">
     <a href="mailto:blk4631@gmail.com">
-      <i class="fas fa-envelope"></i> <span data-i18n="email-link">البريد الإلكتروني</span>
+      <i class="fas fa-envelope"></i> البريد الإلكتروني
     </a>
     <a href="https://www.instagram.com/design.n.go_dz" target="_blank">
-      <i class="fab fa-instagram"></i> <span data-i18n="instagram">إنستغرام</span>
+      <i class="fab fa-instagram"></i> إنستغرام
     </a>
     <a href="https://wa.me/213793113293" target="_blank">
-      <i class="fab fa-whatsapp"></i> <span data-i18n="whatsapp">واتساب</span>
+      <i class="fab fa-whatsapp"></i> واتساب
     </a>
     <a href="tel:+213793113293">
-      <i class="fas fa-phone-alt"></i> <span data-i18n="phone">0793113293</span>
+      <i class="fas fa-phone-alt"></i> 0793113293
     </a>
   </div>
 </section>
@@ -245,76 +247,15 @@
 <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
 <footer>
-  <p data-i18n="footer-text">تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
+  <p>تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com</p>
 </footer>
 
 <script>
-  const translations = {
-    ar: {
-      "home-link": "الرئيسية",
-      "about-link": "من نحن",
-      "services-link": "الخدمات",
-      "contact-link": "تواصل معنا",
-      "contact-heading": "تواصل معنا",
-      "name-label": "الاسم",
-      "email-label": "البريد الإلكتروني",
-      "message-label": "رسالتك",
-      "submit-btn": "إرسال",
-      "email-link": "البريد الإلكتروني",
-      "instagram": "إنستغرام",
-      "whatsapp": "واتساب",
-      "phone": "0793113293",
-      "footer-text": "تابعنا: إنستغرام @design.n.go_dz | واتساب 0793113293 | Email: blk4631@gmail.com"
-    },
-    en: {
-      "home-link": "Home",
-      "about-link": "About Us",
-      "services-link": "Services",
-      "contact-link": "Contact Us",
-      "contact-heading": "Contact Us",
-      "name-label": "Name",
-      "email-label": "Email",
-      "message-label": "Your Message",
-      "submit-btn": "Submit",
-      "email-link": "Email",
-      "instagram": "Instagram",
-      "whatsapp": "WhatsApp",
-      "phone": "0793113293",
-      "footer-text": "Follow us: Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
-    },
-    fr: {
-      "home-link": "Accueil",
-      "about-link": "À Propos",
-      "services-link": "Services",
-      "contact-link": "Contactez-nous",
-      "contact-heading": "Contactez-nous",
-      "name-label": "Nom",
-      "email-label": "Email",
-      "message-label": "Votre message",
-      "submit-btn": "Envoyer",
-      "email-link": "Email",
-      "instagram": "Instagram",
-      "whatsapp": "WhatsApp",
-      "phone": "0793113293",
-      "footer-text": "Suivez-nous : Instagram @design.n.go_dz | WhatsApp 0793113293 | Email: blk4631@gmail.com"
-    }
-  };
-
-  function changeLanguage() {
-    const lang = document.getElementById("language-selector").value;
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-  }
-
   function showSuccessMessage() {
     document.getElementById("success-message").style.display = "block";
     setTimeout(function() {
       window.location.href = "thankyou.html";
-    }, 3000); // 3 seconds delay before redirecting
+    }, 3000);
   }
 </script>
 
