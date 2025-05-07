@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>الرئيسية | Design&Go DZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
@@ -38,6 +39,7 @@
       font-weight: bold;
       border-radius: 30px;
       transition: background 0.3s, transform 0.3s;
+      font-size: 1.1em;
     }
     nav a:hover {
       background: #ff6600;
@@ -116,9 +118,16 @@
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: background 0.3s;
+      z-index: 1000;
     }
     .back-to-top:hover {
       background: #e55d00;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      .hero h2 { font-size: 2em; }
+      .hero p { font-size: 1.1em; }
     }
     @media (max-width: 768px) {
       header h1 { font-size: 2em; }
@@ -126,17 +135,18 @@
       nav a { margin: 5px 0; font-size: 1em; }
       .hero h2 { font-size: 1.8em; }
       .hero p { font-size: 1em; }
-      form { width: 90%; margin: 10px; }
+      form { width: 95%; }
       .back-to-top { bottom: 20px; right: 20px; font-size: 20px; padding: 12px; }
     }
     @media (max-width: 480px) {
       header h1 { font-size: 1.5em; }
       .hero h2 { font-size: 1.5em; }
-      .hero p { font-size: 0.9em; }
+      .hero p { font-size: 0.95em; }
       nav a { font-size: 0.9em; padding: 8px 12px; }
-      form { width: 85%; }
+      form { width: 90%; }
       .back-to-top { bottom: 15px; right: 15px; font-size: 18px; padding: 10px; }
     }
+
     @keyframes slideDown {
       from { transform: translateY(-50px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
@@ -164,12 +174,10 @@
     <p>نحن هنا لتحويل أفكارك إلى واقع، استكشف خدماتنا المتميزة الآن!</p>
   </div>
 
-  <!-- رسالة النجاح -->
   <div id="success-message" class="success-message">
     ✅ تم إرسال رسالتك بنجاح! سيتم تحويلك إلى صفحة الشكر خلال ثوانٍ...
   </div>
 
-  <!-- نموذج الاتصال -->
   <form id="contact-form">
     <input type="text" name="name" placeholder="الاسم الكامل" required>
     <input type="email" name="email" placeholder="البريد الإلكتروني" required>
